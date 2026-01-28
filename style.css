@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav{
+    background-color: black;
+    width: 100vw;
+    height: 13vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative;
+}
+.imgg img{
+    height: 11vh;
+   
+    margin-left: 12%;
+}
+nav h1{
+    position: absolute;
+    left: 45%;
+    transform: translateX(-50%);
+    background-color: #22e2ff00;
+    align-self: center;
+    color: #fff6ff;
+}
+a{
+    text-decoration: none;
+    color: #fff6ff;
+    text-align: center;
+
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap:3%;
+    justify-content: flex-end;
+    padding: 2rem;
+    
+}
+ul a{
+    list-style: none;
+
+    font-size: 1.2rem;
+}
+    
+ul a{
+    transition: all 0.3s;
+}
+ul a:hover{
+    color: #22e2ff;
+    
+}
+
