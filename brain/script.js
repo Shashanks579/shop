@@ -1,13 +1,13 @@
 // 1. Define the Products Data (simulating a database)
 const products = [
-    { id: 1,image:"https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSQ6-E97_8E44ektQs1oTOV9w8Zul6ZsFbjOH2NgoU5BYVd4HyX1uEkNu_v_aPXrtGwfh5s2moJ_QynR5Hx2qKKTMxN__Qv9A", name: "Intel Core i9-13900H", category: "Processor", price: 589 },
-    { id: 2,image:"https://m.media-amazon.com/images/I/5116zdA9uyL._AC_UF1000,1000_QL80_.jpg", name: "AMD Ryzen 9 9950X", category: "Processor", price: 550 },
-    { id: 3,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD6Lo5l9N4JYyZsjYA6dH30QItp06QzkLHTg&s", name: "NVIDIA RTX 5090", category: "Graphics Card", price: 1599 },
-    { id: 4,image:"https://dlcdnwebimgs.asus.com/files/media/E8F9316B-CB25-42B5-9422-CA99338CDB38/v1/img/kv/ROG-STRIX-Z790-E-II.png", name: "ASUS ROG Strix Z790", category: "Motherboard", price: 399 },
-    { id: 5, image: "https://images.unsplash.com/photo-1764854565098-962e2429a1db?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q29yc2FpciUyMFZlbmdlYW5jZSUyMFJBTXxlbnwwfHwwfHx8MA%3D%3D?q=80&w=500&h=615&auto=format&fit=crop", name: "Corsair Vengeance 32GB RAM", category: "RAM", price: 129 },
-    { id: 6, image: "https://images.unsplash.com/photo-1734605022656-937e1cf0839d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8U2Ftc3VuZyUyMDk5MCUyMFBybyUyMFNTRHxlbnwwfHwwfHx8MA%3D%3D?q=80&w=500&h=615&auto=format&fit=crop", name: "Samsung 990 Pro 2TB SSD", category: "Storage", price: 169 },
-    { id: 7, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt8NsajfuLIEIbmyjej5kPjmlCigsOe8sMDA&s?q=80&w=500&h=500&auto=format&fit=crop", name: "Corsair RM1000x PSU", category: "Power Supply", price: 189 },
-    { id: 8, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rZrpYhiVvFO8tsb9xjpRe52aABlH2VIrsA&s?q=80&w=500&h=500&auto=format&fit=crop", name: "Lian Li O11 Dynamic EVO", category: "Case", price: 175 },
+    { id: 1,image:"https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSQ6-E97_8E44ektQs1oTOV9w8Zul6ZsFbjOH2NgoU5BYVd4HyX1uEkNu_v_aPXrtGwfh5s2moJ_QynR5Hx2qKKTMxN__Qv9A", name: "Intel Core i9-13900H", category: "Processor", price: 46800 },
+    { id: 2,image:"https://m.media-amazon.com/images/I/5116zdA9uyL._AC_UF1000,1000_QL80_.jpg", name: "AMD Ryzen 9 9950X", category: "Processor", price: 70200 },
+    { id: 3,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD6Lo5l9N4JYyZsjYA6dH30QItp06QzkLHTg&s", name: "NVIDIA RTX 5090", category: "Graphics Card", price: 300000 },
+    { id: 4,image:"https://dlcdnwebimgs.asus.com/files/media/E8F9316B-CB25-42B5-9422-CA99338CDB38/v1/img/kv/ROG-STRIX-Z790-E-II.png", name: "ASUS ROG Strix Z790", category: "Motherboard", price: 17000 },
+    { id: 5, image: "https://images.unsplash.com/photo-1592664474505-51c549ad15c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFtfGVufDB8fDB8fHww?q=80&w=500&h=615&auto=format&fit=crop", name: "Trident Z Neo DDR5 RAM", category: "RAM", price: 37899 },
+    { id: 6, image: "https://images.unsplash.com/photo-1734605022656-937e1cf0839d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8U2Ftc3VuZyUyMDk5MCUyMFBybyUyMFNTRHxlbnwwfHwwfHx8MA%3D%3D?q=80&w=500&h=615&auto=format&fit=crop", name: "Samsung 990 Pro 2TB SSD", category: "Storage", price: 38729 },
+    { id: 7, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt8NsajfuLIEIbmyjej5kPjmlCigsOe8sMDA&s?q=80&w=500&h=500&auto=format&fit=crop", name: "Corsair RM1000x PSU", category: "Power Supply", price: 12899 },
+    { id: 8, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rZrpYhiVvFO8tsb9xjpRe52aABlH2VIrsA&s?q=80&w=500&h=500&auto=format&fit=crop", name: "Lian Li O11 Dynamic EVO", category: "Case", price: 13299 },
     
 ];
 
@@ -28,7 +28,7 @@ function renderProducts() {
                     <img src="${product.image}" alt="${product.name}">
                     <h3>${product.name}</h3>
                     <p>${product.category}</p>
-                    <span class="price">$${product.price}</span>
+                    <span class="price">₹${product.price}</span>
                     ${isInCart ? 
                         '<button class="add-btn" disabled style="background-color: #ccc; cursor: not-allowed;">✓ In Cart</button>' 
                         : `<button class="add-btn" onclick="addToCart(${product.id})">Add to Cart</button>`
