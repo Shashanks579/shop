@@ -3,6 +3,9 @@
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+body{
+    background-color: #f2f2f2;
+}
 nav{
     background-color: black;
     width: 100vw;
@@ -31,7 +34,7 @@ a{
     text-align: center;
 
 }
-ul{
+nav ul{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -41,17 +44,53 @@ ul{
     padding: 2rem;
     
 }
-ul a{
+nav ul a{
     list-style: none;
 
     font-size: 1.2rem;
 }
     
-ul a{
+nav ul a{
     transition: all 0.3s;
 }
-ul a:hover{
+nav ul a:hover{
     color: #22e2ff;
     
 }
+.show{
+    background-color: rgba(255, 0, 0, 0);
+    height: 15vh;
+    align-items: center;
+    display: flex;
+}
+.show h2{
+    background-color: rgba(102, 51, 153, 0);
+    width: 100vw;
+}
+.menu{
+    background-color: black;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.menu ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+.menu ul a{
+    padding-left: 2%;
+    padding-right: 2%;
+    border-left: .2vw solid ghostwhite;
+   background-color: #22e2ff;
+    
+    
+}
+.menu ul a:first-child{
+    margin-left: .2%;
+    
 
+}
+.menu ul a:last-child{
+   border-right: .2vw solid ghostwhite;
+}
