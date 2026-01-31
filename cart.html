@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUIX - PC Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+         <nav>
+               <div class="imgg"><img src="Pictures/back.png" alt="logo"></div> 
+               <h1>RUIX</h1>
+               <ul>
+                <a href="index.html">Home</a>
+                <a href="product.html">Product</a>
+                <a href="cart.html">Cart <span id="cart-count">(0)</span></a>
+                <a href="Contact.html">Help</a>
+                <a href="signin.html">Sign in</a>
+               </ul>
+            </nav>
+        
+        <div class="cart-container">
+            <h2 style="text-align: center; margin: 2rem; color: #333;">Shopping Cart</h2>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <tr><td colspan="4">Your cart is empty.</td></tr>
+                </tbody>
+            </table>
+            <div class="cart-total">
+                <h3>Total Price: <span id="total-price">$0.00</span></h3>
+                <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+            </div>
+        </div>
+       
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>

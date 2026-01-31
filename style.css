@@ -69,28 +69,211 @@ nav ul a:hover{
 }
 .menu{
     background-color: black;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
 }
-.menu ul{
+.menu-list{
+   
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+    flex-direction: row;
 }
-.menu ul a{
-    padding-left: 2%;
-    padding-right: 2%;
-    border-left: .2vw solid ghostwhite;
-   background-color: #22e2ff;
-    
-    
+.menu-item{
+    position: relative;
+    list-style: none;
 }
-.menu ul a:first-child{
-    margin-left: .2%;
-    
+.menu-link{
+    display: block;
+    padding: 0.8rem 1.5rem;
+    background-color: #cef2f7;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    border: 0.1rem solid ghostwhite;
+    transition: all 0.3s ease;
+    border-left: 0.2rem solid ghostwhite;
+}
+.menu-link:hover{
+    background-color: #1ab8cc;
+    color: #fff;
+}
+.dropdown-arrow{
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+}
+.submenu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
+    z-index: 1000;
+}
+.submenu li{
+    list-style: none;
+}
+.submenu a{
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid #22e2ff;
+}
+.submenu a:hover{
+    background-color: #f2f2f2;
+    color: #22e2ff;
+    padding-left: 2rem;
+}
+.menu-item:hover .submenu,
+.menu-item:focus-within .submenu{
+    display: block;
+}
 
+/* --- Add this to the bottom of style.css --- */
+
+/* Product Grid Styles */
+.product-section {
+    padding: 20px;
 }
-.menu ul a:last-child{
-   border-right: .2vw solid ghostwhite;
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #22e2ff;
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.price {
+    color: #1ab8cc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.add-btn {
+    background-color: black;
+    color: #22e2ff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #22e2ff;
+    color: black;
+}
+
+/* Cart Page Styles */
+.cart-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cart-table th, .cart-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: black;
+    color: #22e2ff;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.checkout-btn {
+    background-color: #1ab8cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.remove-btn {
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cart-total {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.cart-total h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+}
+
+.clear-cart-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.clear-cart-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
 }
