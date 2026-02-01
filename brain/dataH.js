@@ -71,6 +71,50 @@ app.post('/accept-sign', async (req, res) => {
     }
 });
 
+
+// Route to get all Issues from Database 1
+app.get('/api/issues', async (req, res) => {
+    try {
+        const issues = await HelpRequest.find().sort({ createdAt: -1 }); // Latest first
+        res.json(issues);
+    } catch (err) {
+        res.status(500).send(err);
+    }
+});
+
+// Route to get all Users from Database 2
+app.get('/api/users', async (req, res) => {
+    try {
+        const users = await SecondModel.find().sort({ createdAt: -1 });
+        res.json(users);
+    } catch (err) {
+        res.status(500).send(err);
+    }
+});
+
+
+
+
+// Delete route for Database 1 (Issues)
+app.delete('/api/issues/:id', async (req, res) => {
+    try {
+        await HelpRequest.findByIdAndDelete(req.params.id);
+        res.json({ message: "Issue deleted successfully" });
+    } catch (err) {
+        res.status(500).json({ error: "Failed to delete issue" });
+    }
+});
+
+// Delete route for Database 2 (Users/Other data)
+app.delete('/api/users/:id', async (req, res) => {
+    try {
+        await SecondModel.findByIdAndDelete(req.params.id);
+        res.json({ message: "User entry deleted successfully" });
+    } catch (err) {
+        res.status(500).json({ error: "Failed to delete user" });
+    }
+});
+
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

@@ -164,3 +164,9 @@ body {
     .sign-header h1 { font-size: 1.3rem; }
     .sign-header p { font-size: 0.85rem; }
 }
+.footer a{
+    color: white;
+    font-size: 2px;
+    text-decoration: none;
+    margin-left: 20px;
+}
