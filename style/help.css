@@ -21,7 +21,7 @@ body{
     flex-direction: column;
     border: 1px solid #22e2ff;
     box-shadow: 0 0 8px 8px rgba(34, 226, 255, 0.348);
-    background-color: rgba(255, 255, 255, 0.497);
+    background-color: rgba(255, 255, 255, 0.04);;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: 12px;
@@ -62,6 +62,7 @@ input, textarea {
     min-height: 2.4rem;
     background-color: rgba(255,255,255,0.03);
     box-sizing: border-box;
+    color: #fff;
 }
 
 textarea { 

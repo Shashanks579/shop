@@ -1,34 +1,48 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
-// 1. Middleware to handle form data
 app.use(express.static(path.join(__dirname, '../')));
 
+// 1. SET UP MULTIPLE CONNECTIONS
+// Database 1: Your existing Help database
+const connHelp = mongoose.createConnection('mongodb://localhost:27017/RUIXDb');
+
+// Database 2: Your new second database (Rename 'SIgnDb' as needed)
+const connSecond = mongoose.createConnection('mongodb://localhost:27017/SIgnDb');
+
+// 2. DEFINE SCHEMAS AND BIND TO SPECIFIC CONNECTIONS
+const helpSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    issue: String
+}, { timestamps: true });
+
+// Bind the model to connHelp specifically
+const HelpRequest = connHelp.model('HelpRequest', helpSchema);
+
+// Define Schema for the second database
+const secondSchema = new mongoose.Schema({
+    // Add your new database fields here
+    email: String,
+    password: String,
+}, { timestamps: true });
+
+// Bind the model to connSecond specifically
+const SecondModel = connSecond.model('SecondEntry', secondSchema);
+
+// 3. LOG CONNECTION STATUS
+connHelp.on('connected', () => console.log("Connected to RUIXDb (DB 1) successfully!"));
+connSecond.on('connected', () => console.log("Connected to SIgnDb (DB 2) successfully!"));
+
+// 4. ROUTES
 app.get('/help', (req, res) => {
     res.sendFile(path.join(__dirname, '../help.html'));
 });
 
-// 2. Connect to MongoDB (Replace 'RUIX_DB' with your desired database name)
-mongoose.connect('mongodb://localhost:27017/RUIXDb')
-    .then(() => console.log("Connected to MongoDB successfully!"))
-    .catch(err => console.error("Could not connect to MongoDB", err));
-
-// 3. Define a Schema and Model for your Help Form
-const helpSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    issue: String,
-    date: { type: Date, default: Date.now },
-    timestamp: { type: Date, default: Date.now }
-},{ timestamps: true });
-
-const HelpRequest = mongoose.model('HelpRequest', helpSchema);
-
-// 4. Route to handle form submission
+// Route for Database 1
 app.post('/submit-help', async (req, res) => {
     try {
         const newRequest = new HelpRequest({
@@ -36,16 +50,27 @@ app.post('/submit-help', async (req, res) => {
             email: req.body.email,
             issue: req.body.issue
         });
-
         await newRequest.save();
-        // Redirect back to home or show success message
-        res.send("<h1>Thank you! Your issue has been recorded.</h1><a href='/'>Go Back</a>");
+        res.send("<h1>Recorded in RUIXDb!</h1><a href='/help'>Go Back</a>");
     } catch (error) {
-        res.status(500).send("There was an error saving your data.");
+        res.status(500).send("Error saving to DB 1.");
     }
 });
 
-// 5. Start the server
+// Route for Database 2
+app.post('/accept-sign', async (req, res) => {
+    try {
+        const entry = new SecondModel({
+            email: req.body.email,
+            password: req.body.password
+        });
+        await entry.save();
+        res.send("<h1>Recorded in Second Database!</h1><a href='/help'>Go Back</a>");
+    } catch (error) {
+        res.status(500).send("Error saving to DB 2.");
+    }
+});
+
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
