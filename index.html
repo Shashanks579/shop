@@ -3,34 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RUIX - PC Components Store</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/home.css">
 </head>
-<link rel="stylesheet" href="style/style.css">
 <body>
-    <section>
-         <nav>
-               <div class="imgg"><img src="Pictures/back.png" alt="logo"></div> 
-               <h1>RUIX</h1>
-               <ul>
-                <a href="index.html">Home</a>
-                <a href="product.html">Product</a>
-                <a href="cart.html">Cart</a>
-                <a href="Contact.html">Help</a>
-                <a href="signin.html">Sign in</a>
-               </ul>
-            </nav>
-        <div class="show">
-            <h2><marquee behavior="" direction="">make it the way you want</marquee></h2>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="Pictures/back.png" alt="RUIX Logo" class="logo-img">
+                <h1 class="brand-name">RUIX</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="product.html" class="nav-link">Products</a></li>
+                <li><a href="cart.html" class="nav-link">Cart <span id="cart-count" class="cart-badge">(0)</span></a></li>
+                <li><a href="Contact.html" class="nav-link">Help</a></li>
+                <li><a href="signin.html" class="nav-link">Sign In</a></li>
+            </ul>
         </div>
-        
-         <div class="product-section">
-            <h2 style="text-align: center; margin: 2rem; color: #333;">Featured Components</h2>
-            <div class="product-container" id="product-list">
-                </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2 class="hero-title">Build Your Dream PC</h2>
+            <p class="hero-subtitle">Premium Components at Unbeatable Prices</p>
         </div>
-
-
     </section>
+
+    <div class="product-section">
+        <div class="section-header">
+            <h2 class="section-title">Featured Components</h2>
+            <p class="section-desc">Explore our latest and greatest PC components</p>
+        </div>
+        <div class="product-container" id="product-list"></div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 RUIX. All rights reserved.</p>
+    </footer>
+
+    <script src="brain/script.js"></script>
 </body>
-<script src="brain/script.js"></script>
 </html>

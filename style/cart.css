@@ -1,0 +1,134 @@
+.cart-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.cart-wrapper {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #22e2ff;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table thead {
+    background-color: #000;
+    color: #22e2ff;
+}
+
+.cart-table th {
+    padding: 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #22e2ff;
+    font-size: 1.05rem;
+}
+
+.cart-table td {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.cart-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.empty-cart {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+.remove-btn {
+    color: #ff4444;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ff4444;
+    border-radius: 4px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #ff4444;
+    color: white;
+}
+
+/* ----------- CART SUMMARY ----------- */
+.cart-summary {
+    padding: 2rem 1.5rem;
+    background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+    text-align: right;
+    border-top: 2px solid #22e2ff;
+}
+
+.total-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 2px solid #22e2ff;
+}
+
+.total-label {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.total-amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #22e2ff;
+}
+
+.checkout-btn {
+    background-color: #22e2ff;
+    color: #000;
+    border: 2px solid #22e2ff;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.checkout-btn:hover {
+    background-color: #1ab8cc;
+    border-color: #1ab8cc;
+    transform: scale(1.05);
+}
+
+.clear-cart-btn {
+    background-color: #ff4444;
+    color: white;
+    border: 2px solid #ff4444;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.clear-cart-btn:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+    transform: scale(1.05);
+}

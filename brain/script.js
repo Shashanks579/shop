@@ -85,14 +85,14 @@ function renderCart() {
             <tr>
                 <td>${item.name}</td>
                 <td>${item.category}</td>
-                <td>$${item.price}</td>
+                <td>₹${item.price}</td>
                 <td><span class="remove-btn" onclick="removeFromCart(${index})">Remove</span></td>
             </tr>
         `).join('');
 
         // Calculate Total
         const total = cart.reduce((sum, item) => sum + item.price, 0);
-        totalPriceElement.innerText = "$" + total.toFixed(2);
+        totalPriceElement.innerText = total.toFixed(2);
     }
 }
 
