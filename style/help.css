@@ -1,0 +1,97 @@
+body{
+   background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #22e2ff 100%);
+}
+
+.help-container {
+   align-content: center;
+
+}
+
+.page-header{
+    box-shadow: 0 2px 8px 8px rgba(34, 226, 255, 0.348);
+    background: none;
+    box-shadow: none;
+}
+.help-form{
+    width: 50vw;
+    padding-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #22e2ff;
+    box-shadow: 0 0 8px 8px rgba(34, 226, 255, 0.348);
+    background-color: rgba(255, 255, 255, 0.497);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 12px;
+    
+}
+.help-form section{
+    align-items: center;
+    background-color: aliceblue;
+}
+.help-form h1{
+    text-align: center;
+    color: white;
+}
+
+.form-group {
+     width: 90%; 
+     max-width: 720px; 
+     margin: 0.6rem auto; 
+     display: flex; 
+     flex-direction: column; 
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: rgba(7, 104, 131, 0.9);
+    font-size: 0.95rem;
+}
+
+
+input, textarea {
+    margin: 0;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #22e2ff;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    min-height: 2.4rem;
+    background-color: rgba(255,255,255,0.03);
+    box-sizing: border-box;
+}
+
+textarea { 
+    min-height: 6rem; 
+    max-height: 6rem;
+    min-width: 100%; 
+    max-width: 100%;
+    padding-top: 0.8rem;
+     padding-bottom: 0.8rem; 
+}
+
+
+.footer{
+    background: none;
+    border: none;
+}
+
+
+button {
+    background-color: #22e2ffbc;
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 4%;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #1bb8e0;
+    margin-top: 3.5%;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - RUIX</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/help.css">
+</head>
+
+<body>
+     <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="Pictures/back.png" alt="RUIX Logo" class="logo-img">
+                <h1 class="brand-name">RUIX</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link ">Home</a></li>
+                <li><a href="product.html" class="nav-link">Products</a></li>
+                <li><a href="cart.html" class="nav-link">Cart <span id="cart-count" class="cart-badge">(0)</span></a></li>
+                <li><a href="help.html" class="nav-link active">Help</a></li>
+                <li><a href="signin.html" class="nav-link">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="page-header">
+        <h1 class="page-title">I guess there's a problem</h1>
+        <p class="page-subtitle">Tell us about that we will resolve ASAP</p>
+    </div>
+
+    <div class="help-container">
+        <form class="help-form" action="/submit-help" method="POST">
+            <h1>Pls Fill Out This Form</h1>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="issue">Describe your issue</label>
+               <textarea id="issue" name="issue" rows="5" required></textarea>
+            </div>
+
+            <div class="form-group form-actions">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 RUIX. All rights reserved.</p>
+    </footer>
+</body>
+<script src="brain/dataH.js"></script>
+</html>
