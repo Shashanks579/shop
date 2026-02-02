@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const app = express();
 const cors = require('cors');
 app.use(cors());
@@ -76,6 +76,11 @@ app.post('/accept-sign', async (req, res) => {
 
 // Route to get all Issues from Database 1
 app.get('/api/issues', async (req, res) => {
+    const authHeader = req.headers['authorization'];
+    
+    if (authHeader !== ADMIN_PASSWORD) {
+        return res.status(403).json({ error: "Unauthorized access" });
+    }
     try {
         const issues = await HelpRequest.find().sort({ createdAt: -1 }); // Latest first
         res.json(issues);
@@ -86,6 +91,11 @@ app.get('/api/issues', async (req, res) => {
 
 // Route to get all Users from Database 2
 app.get('/api/users', async (req, res) => {
+    const authHeader = req.headers['authorization'];
+    
+    if (authHeader !== ADMIN_PASSWORD) {
+        return res.status(403).json({ error: "Unauthorized access" });
+    }
     try {
         const users = await SecondModel.find().sort({ createdAt: -1 });
         res.json(users);
