@@ -51,7 +51,7 @@ app.post('/submit-help', async (req, res) => {
             issue: req.body.issue
         });
         await newRequest.save();
-        res.send("<h1>Recorded in RUIXDb!</h1><a href='/help'>Go Back</a>");
+        res.send("<h1>Recorded in RUIXDb!</h1><a href='https://ruixpc.netlify.app/help'>Go Back</a>");
     } catch (error) {
         res.status(500).send("Error saving to DB 1.");
     }
@@ -65,7 +65,7 @@ app.post('/accept-sign', async (req, res) => {
             password: req.body.password
         });
         await entry.save();
-        res.send("<h1>Recorded in Second Database!</h1><a href='/help'>Go Back</a>");
+        res.send("<h1>Recorded in Second Database!</h1><a href='https://ruixpc.netlify.app/sign'>Go Back</a>");
     } catch (error) {
         res.status(500).send("Error saving to DB 2.");
     }
