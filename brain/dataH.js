@@ -3,15 +3,17 @@ const mongoose = require('mongoose');
 const path = require('path');
 
 const app = express();
+const cors = require('cors');
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../')));
 
 // 1. SET UP MULTIPLE CONNECTIONS
-// Database 1: Your existing Help database
-const connHelp = mongoose.createConnection('mongodb://localhost:27017/RUIXDb');
 
-// Database 2: Your new second database (Rename 'SIgnDb' as needed)
-const connSecond = mongoose.createConnection('mongodb://localhost:27017/SIgnDb');
+const connHelp = mongoose.createConnection(process.env.MONGO_URI_HELP);
+
+
+const connSecond = mongoose.createConnection(process.env.MONGO_URI_SIGN);
 
 // 2. DEFINE SCHEMAS AND BIND TO SPECIFIC CONNECTIONS
 const helpSchema = new mongoose.Schema({
@@ -35,11 +37,11 @@ const SecondModel = connSecond.model('SecondEntry', secondSchema);
 
 // 3. LOG CONNECTION STATUS
 connHelp.on('connected', () => console.log("Connected to RUIXDb (DB 1) successfully!"));
-connSecond.on('connected', () => console.log("Connected to SIgnDb (DB 2) successfully!"));
+connSecond.on('connected', () => console.log("Connected to SignDb (DB 2) successfully!"));
 
 // 4. ROUTES
-app.get('/help', (req, res) => {
-    res.sendFile(path.join(__dirname, '../help.html'));
+app.get('https://ruixpc.netlify.app/help', (req, res) => {
+    res.sendFile(path.join(__dirname, 'https://ruixpc.netlify.app/help'));
 });
 
 // Route for Database 1
@@ -51,7 +53,7 @@ app.post('/submit-help', async (req, res) => {
             issue: req.body.issue
         });
         await newRequest.save();
-        res.send("<h1>Recorded in RUIXDb!</h1><a href='/help'>Go Back</a>");
+        res.send("<h1>Recorded in RUIXDb!</h1><a href='https://ruixpc.netlify.app/help'>Go Back</a>");
     } catch (error) {
         res.status(500).send("Error saving to DB 1.");
     }
@@ -65,7 +67,7 @@ app.post('/accept-sign', async (req, res) => {
             password: req.body.password
         });
         await entry.save();
-        res.send("<h1>Recorded in Second Database!</h1><a href='/help'>Go Back</a>");
+        res.send("<h1>Recorded in Second Database!</h1><a href='https://ruixpc.netlify.app/sign'>Go Back</a>");
     } catch (error) {
         res.status(500).send("Error saving to DB 2.");
     }
@@ -115,7 +117,8 @@ app.delete('/api/users/:id', async (req, res) => {
     }
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
+
 });

@@ -1,6 +1,6 @@
 async function loadDashboard() {
     // 1. Fetch and Display Issues
-    const issueResponse = await fetch('/api/issues');
+    const issueResponse = await fetch('https://brain-8evh.onrender.com/api/issues');
     const issues = await issueResponse.json();
     const issueContainer = document.getElementById('issue-list');
     
@@ -15,7 +15,7 @@ async function loadDashboard() {
     `).join('');
 
     // 2. Fetch and Display Users
-    const userResponse = await fetch('/api/users');
+    const userResponse = await fetch('https://brain-8evh.onrender.com/api/users');
     const users = await userResponse.json();
     const userContainer = document.getElementById('user-list');
 
@@ -34,7 +34,7 @@ async function deleteItem(id, type) {
     if (!confirm("Are you sure you want to delete this?")) return;
 
     try {
-        const response = await fetch(`/api/${type}/${id}`, {
+        const response = await fetch(`https://brain-8evh.onrender.com/api/${type}/${id}`, {
             method: 'DELETE'
         });
 

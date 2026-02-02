@@ -20,7 +20,9 @@
   "homepage": "https://github.com/Shashanks579/shop#readme",
   "dependencies": {
     "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
     "express": "^5.2.1",
-    "mongoose": "^9.1.5"
+    "mongoose": "^9.1.5",
+    "path": "^0.12.7"
   }
 }
